@@ -1,12 +1,13 @@
 {
+  "$schema": "https://www.flowlauncher.com/schemas/plugin.schema.json",
   "ID":"473708eb-3d89-406d-abeb-6b444506b827",             
-  "ActionKeyword":"tt",  
+  "ActionKeywords": ["tt"],  
   "Name":"TickTick",           
   "Description":"Manage your TickTick tasks from Flow Launcher.",   
   "Author":"Jaysum57",         
   "Version":"1.0.0",        
   "Language":"python",       
   "Website":"https://github.com/Jaysum57/Flow.Launcher.Plugin.Ticktick",        
-  "IcoPath": "images\\logo.png",       
+  "IcoPath": "images\\logo.jpg",       
   "ExecuteFileName":"main.py" 
 }
