@@ -8,6 +8,6 @@
   "Version":"1.0.0",        
   "Language":"python",       
   "Website":"https://github.com/Jaysum57/Flow.Launcher.Plugin.Ticktick",        
-  "IcoPath": "images\\logo.jpg",       
+  "IcoPath": "images\\logo.png",       
   "ExecuteFileName":"main.py" 
 }
