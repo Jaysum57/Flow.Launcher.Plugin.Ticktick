@@ -6,7 +6,7 @@
   "Author":"Jaysum57",         
   "Version":"1.0.0",        
   "Language":"python",       
-  "Website":"",        
-  "IcoPath": "",       
+  "Website":"https://github.com/Jaysum57/Flow.Launcher.Plugin.Ticktick",        
+  "IcoPath": "images\\logo.png",       
   "ExecuteFileName":"main.py" 
 }
