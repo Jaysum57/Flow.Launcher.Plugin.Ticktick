@@ -1,0 +1,29 @@
+#$schema: https://www.flowlauncher.com/schemas/settings-template.schema.json
+- type: Space
+  height: 20
+- type: Title
+  text: TickTick API Credentials
+- type: Space
+  height: 10
+- type: TextBlock
+  text: Get your Client ID and Client Secret from the TickTick Developer Center.
+- type: Space
+  height: 10
+- type: Input
+  key: client_id
+  label: TickTick Client ID
+  description: Your Client ID from TickTick Developer Center.
+- type: PasswordInput # Use PasswordInput for secrets
+  key: client_secret
+  label: TickTick Client Secret
+  description: Your Client Secret from TickTick Developer Center.
+- type: Input
+  key: redirect_uri
+  label: OAuth Redirect URI
+  description: Must match the Redirect URI configured in TickTick Developer Center. Default: http://localhost:8080
+  default: http://localhost:8080 # You can set a default value here
+- type: Space
+  height: 20
+- type: Link
+  text: Go to TickTick Developer Center
+  url: https://developer.ticktick.com/api#/openapi
