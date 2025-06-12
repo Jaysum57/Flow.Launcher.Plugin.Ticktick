@@ -1,0 +1,12 @@
+{
+  "ID":"473708eb-3d89-406d-abeb-6b444506b827",             
+  "ActionKeyword":"tt",  
+  "Name":"TickTick",           
+  "Description":"Manage your TickTick tasks from Flow Launcher.",   
+  "Author":"Jaysum57",         
+  "Version":"1.0.0",        
+  "Language":"python",       
+  "Website":"",        
+  "IcoPath": "",       
+  "ExecuteFileName":"main.py" 
+}
