@@ -413,34 +413,31 @@ if __name__ == "__main__":
 
 
 class TickTick(FlowLauncher):
-    """
-    Main class to interact with TickTick API.
-    This class can be extended to include more methods for different API endpoints.
-    """
     def __init__(self):
         self.access_token = get_ticktick_access_token()
         if not self.access_token:
-            print("Failed to obtain access token. Please check your credentials and try again.")
+            print("Failed to obtain access token.")
             exit(1)
-        print("TickTick client initialized with access token.")
 
-    def query(self, query: str):
-        # Parse user input and return list of results
-        # For example, if query == "projects", show list of projects
+    def query(self, query):
         projects = get_user_projects()
         if not projects:
-            return [{"Title": "No projects found", "SubTitle": "Check authentication"}]
+            return [{
+                "Title": "No projects found",
+                "SubTitle": "Check if you're logged in properly",
+                "IcoPath": "Images/icon.png"
+            }]
         return [
             {
                 "Title": project.get("name"),
                 "SubTitle": f"ID: {project.get('id')}",
+                "IcoPath": "Images/icon.png",
                 "JsonRPCAction": {
                     "method": "open_project",
                     "parameters": [project.get("id")]
                 }
             } for project in projects
-    ]
+        ]
 
     def open_project(self, project_id):
         webbrowser.open(f"https://ticktick.com/webapp/#p/{project_id}")
-
