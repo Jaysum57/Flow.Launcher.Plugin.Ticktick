@@ -5,9 +5,11 @@ import webbrowser
 import threading
 import json
 import time
+from flowlauncher import FlowLauncher
 from urllib.parse import urlencode, parse_qs, urlparse
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from typing import Callable, List, Dict, Any, Optional
+
 
 # --- Configuration ---
 # IMPORTANT: Replace these with your actual Client ID and Client Secret from TickTick Developer Center.
@@ -408,3 +410,37 @@ if __name__ == "__main__":
         print("\nFailed to obtain access token. Cannot proceed with any API calls.")
 
     print("\nTickTick API Client Demonstration Finished.")
+
+
+class TickTick(FlowLauncher):
+    """
+    Main class to interact with TickTick API.
+    This class can be extended to include more methods for different API endpoints.
+    """
+    def __init__(self):
+        self.access_token = get_ticktick_access_token()
+        if not self.access_token:
+            print("Failed to obtain access token. Please check your credentials and try again.")
+            exit(1)
+        print("TickTick client initialized with access token.")
+
+    def query(self, query: str):
+        # Parse user input and return list of results
+        # For example, if query == "projects", show list of projects
+        projects = get_user_projects()
+        if not projects:
+            return [{"Title": "No projects found", "SubTitle": "Check authentication"}]
+        return [
+            {
+                "Title": project.get("name"),
+                "SubTitle": f"ID: {project.get('id')}",
+                "JsonRPCAction": {
+                    "method": "open_project",
+                    "parameters": [project.get("id")]
+                }
+            } for project in projects
+    ]
+
+    def open_project(self, project_id):
+        webbrowser.open(f"https://ticktick.com/webapp/#p/{project_id}")
+
