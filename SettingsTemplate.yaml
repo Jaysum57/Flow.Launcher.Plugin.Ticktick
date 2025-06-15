@@ -1,0 +1,22 @@
+body:
+  - type: input
+    attributes:
+      name: client_id
+      label: "TickTick Client ID"
+      defaultValue: ""
+      description: Your Client ID from TickTick Developer Center.
+  - type: passwordBox
+    attributes:
+      name: client_secret
+      label: "TickTick Client Secret"
+      defaultValue: "http://localhost:8080"
+      description: Your Client Secret from TickTick Developer Center.
+  - type: input
+    attributes:
+      name: redirect_uri
+      label: "OAuth Redirect URI"
+      defaultValue: ""
+      description: Must match the Redirect URI configured in TickTick Developer Center. Default is http://localhost:8080
+  - type: textBlock
+    attributes:
+      description: Visit TickTick Developer Center at https://developer.ticktick.com/api#/openapi to register your application and get your credentials.

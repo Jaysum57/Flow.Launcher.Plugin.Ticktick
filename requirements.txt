@@ -1,8 +1,0 @@
-ticktick-py==2.0.3
-requests==2.26.0
-pytz==2021.1
-regex==2021.4.4
-urllib3==1.26.7
-certifi
-charset-normalizer~=2.0.0
-idna<4,>=2.5
